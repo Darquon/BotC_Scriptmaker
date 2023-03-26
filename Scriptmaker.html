@@ -1,17 +1,661 @@
 <!DOCTYPE html>
 <html>
-  
-  <head>
-    <link rel="stylesheet" type="text/css" href="Scriptmaker.css">
-    
-  </head>
-  
-  <body>
-    
-    <div id="background_art">
-      
+
+<head>
+<link rel="stylesheet" type="text/css" href="ScriptbuilderV2.css">
+<!--<link rel="stylesheet" media="print" href="ScriptbuilderPrint.css">-->
+
+</head>
+
+<body>
+<div id="background-color">
+    <div id="labels" class="inputs">
+
+        <label for="scriptName"><br>Script Name<br></label>
+        <input type="text" id="scriptNameInput" value="Script Name">
+        <label for="townsfolk"><br>Townsfolk:<br></label>
+        <select id="townsfolkList" multiple="multiple"></select>
+        <label for=outsiders><br>Outsiders:<br></label>
+        <select id="outsiderList" multiple="multiple"></select>
+        <label for=minions><br>Minions:<br></label>
+        <select id="minionList" multiple="multiple"></select>
+        <label for=demons><br>Demons:<br></label>
+        <select id="demonList" multiple="multiple"></select>
+        <label for=travelers><br>Travelers:<br></label>
+        <select id="travelerList" multiple="multiple"></select>
     </div>
-    
-  </body>
-  
+    <table id="playerSheetTownData" class="referenceTable">
+        <tbody>
+            <!--Table data goes here. And should be automatic.-->  
+        </tbody>
+    </table>
+    <table id="playerSheetOutData" class="referenceTable">
+        <tbody>
+            <!--Table data goes here. And should be automatic.-->  
+        </tbody>
+    </table>
+    <table id="playerSheetMinData" class="referenceTable">
+        <tbody>
+            <!--Table data goes here. And should be automatic.-->  
+        </tbody>
+    </table>
+    <table id="playerSheetDemData" class="referenceTable">
+        <tbody>
+            <!--Table data goes here. And should be automatic.-->  
+        </tbody>
+    </table>
+
+    <table id="playerSheetTrvData" class="referenceTable">
+        <tbody>
+            <!--Table data goes here. And should be automatic.-->  
+        </tbody>
+    </table>
+    <!--
+    <div class="grid-container1">
+        <div class="grid-item1"></div>
+        <div id="line1" class="grid-item1"><pre>-----<span class="scriptNameOutput">Script Name-------------------------------------------------------------------------------------------------------------------</span>Townsfolk---</pre></div>
+        <div class="grid-item1"><img id="image1" class="locationImage"></div>  
+        <div id="line2" class="grid-item1"><pre><span class="character1"></span></pre></div>
+        <div class="grid-item1"><img id="image2" class="locationImage"></div>
+        <div id="line3" class="grid-item1"><pre><span class="character2"></span></pre></div>  
+        <div class="grid-item1"><img id="image3" class="locationImage"></div>
+        <div id="line4" class="grid-item1"><pre><span class="character3"></span></pre></div>
+        <div class="grid-item1"><img id="image4" class="locationImage"></div>
+        <div id="line5" class="grid-item1"><pre><span class="character4"></span></pre></div>
+        <div class="grid-item1"><img id="image5" class="locationImage"></div>
+        <div id="line6" class="grid-item1"><pre><span class="character5"></span></pre></div>
+        <div class="grid-item1"><img id="image6" class="locationImage"></div>
+        <div id="line7" class="grid-item1"><pre><span class="character6"></span></pre></div>
+        <div class="grid-item1"><img id="image7" class="locationImage"></div>
+        <div id="line8" class="grid-item1"><pre><span class="character7"></span></pre></div>
+        <div class="grid-item1"><img id="image8" class="locationImage"></div>
+        <div id="line9" class="grid-item1"><pre><span class="character8"></span></pre></div>
+        <div class="grid-item1"><img id="image9" class="locationImage"></div>
+        <div id="line10" class="grid-item1"><pre><span class="character9"></span></pre></div>
+        <div class="grid-item1"><img id="image10" class="locationImage"></div>  
+        <div id="line11" class="grid-item1"><pre><span class="character10"></span></pre></div>
+        <div class="grid-item1"><img id="image11" class="locationImage"></div>  
+        <div id="line12" class="grid-item1"><pre><span class="character11"></span></pre></div>
+        <div class="grid-item1"><img id="image12" class="locationImage"></div>  
+        <div id="line13" class="grid-item1"><pre><span class="character12"></span></pre></div>
+        <div class="grid-item1"><img id="image13" class="locationImage"></div>  
+        <div id="line14" class="grid-item1"><pre><span class="character13"></span></pre></div>
+        <div class="grid-item1"><img id="image14" class="locationImage"></div>  
+        <div id="line15" class="grid-item1"><pre><span class="character14"></span></pre></div>
+        <div class="grid-item1"><img id="image15" class="locationImage"></div>  
+        <div id="line16" class="grid-item1"><pre><span class="character15"></span></pre></div>
+        <div class="grid-item1"><img id="image16" class="locationImage"></div>  
+        <div id="line17" class="grid-item1"><pre><span class="character16"></span></pre></div>
+        <div class="grid-item1"><img id="image17" class="locationImage"></div>  
+        <div id="line18" class="grid-item1"><pre><span class="character17"></span></pre></div>
+        <div class="grid-item1"><img id="image18" class="locationImage"></div>  
+        <div id="line19" class="grid-item1"><pre><span class="character18"></span></pre></div>
+        <div class="grid-item1"><img id="image19" class="locationImage"></div>  
+        <div id="line20" class="grid-item1"><pre><span class="character19"></span></pre></div>
+        <div class="grid-item1"><img id="image20" class="locationImage"></div>  
+        <div id="line21" class="grid-item1"><pre><span class="character20"></span></pre></div>
+        <div class="grid-item1"><img id="image21" class="locationImage"></div>  
+        <div id="line22" class="grid-item1"><pre><span class="character21"></span></pre></div>
+        <div class="grid-item1"><img id="image22" class="locationImage"></div>  
+        <div id="line23" class="grid-item1"><pre><span class="character22"></span></pre></div>
+        <div class="grid-item1"><img id="image23" class="locationImage"></div>  
+        <div id="line24" class="grid-item1"><pre><span class="character23"></span></pre></div>
+        <div class="grid-item1"><img id="image24" class="locationImage"></div>  
+        <div id="line25" class="grid-item1"><pre><span class="character24"></span></pre></div>
+        <div class="grid-item1"><img id="image25" class="locationImage"></div>  
+        <div id="line26" class="grid-item1"><pre><span class="character25"></span></pre></div>
+        <div class="grid-item1"><img id="image26" class="locationImage"></div>  
+        <div id="line27" class="grid-item1"><pre><span class="character26"></span></pre></div>
+        <div class="grid-item1"><img id="image27" class="locationImage"></div>  
+        <div id="line28" class="grid-item1"><pre><span class="character27"></span></pre></div>
+        <div class="grid-item1"><img id="image28" class="locationImage"></div>  
+        <div id="line29" class="grid-item1"><pre><span class="character28"></span></pre></div>
+        <div class="grid-item1"><img id="image29" class="locationImage"></div>  
+        <div id="line30" class="grid-item1"><pre><span class="character29"></span></pre></div>
+        <div class="grid-item1"><img id="image30" class="locationImage"></div>  
+        <div id="line31" class="grid-item1"><pre><span class="character30"></span></pre></div>
+        <div class="grid-item1"><img id="image31" class="locationImage"></div>  
+        <div id="line32" class="grid-item1"><pre><span class="character31"></span></pre></div>
+        <div class="grid-item1"><img id="image32" class="locationImage"></div>  
+        <div id="line33" class="grid-item1"><pre><span class="character32"></span></pre></div>
+        <div class="grid-item1"><img id="image33" class="locationImage"></div>  
+        <div id="line34" class="grid-item1"><pre><span class="character33"></span></pre></div>
+        <div class="grid-item1"></div>
+        <div id="line1" class="grid-item1"><pre>                                                                                                                        *Not the First Night   </pre></div>
+    </div>
+
+    <h1></h1>
+
+    <div class="grid-container2">
+        <div class="grid-item2 grid-header2a"><p>First Night</p></div>
+        <div class="grid-item2 grid-divider"></div>
+        <div class="grid-item2 grid-header2b"><p>Other Nights</p></div>
+        <div class="grid-item2"><img id="firstNightImage1" class="locationImage"></div>  
+        <div class="grid-item2"><p><span class="firstNightName1"></span></p></div>
+        <div class="grid-item2"><img id="firstNightImage18" class="locationImage"></div>  
+        <div class="grid-item2"><p><span class="firstNightName18"></span></p></div>
+        <div class="grid-item2"><img id="otherNightImage1" class="locationImage"></div>  
+        <div class="grid-item2"><p><span class="otherNightName1"></span></p></div>
+        <div class="grid-item2"><img id="otherNightImage18" class="locationImage"></div>  
+        <div class="grid-item2"><p><span class="otherNightName18"></span></p></div>
+
+        <div class="grid-item2"><img id="firstNightImage2" class="locationImage"></div> 
+        <div class="grid-item2"><p><span class="firstNightName2"></span></p></div>
+        <div class="grid-item2"><img id="firstNightImage19" class="locationImage"></div>  
+        <div class="grid-item2"><p><span class="firstNightName19"></span></p></div>
+        <div class="grid-item2"><img id="otherNightImage2" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName2"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage19" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName19"></span></pre></div>
+
+        <div class="grid-item2"><img id="firstNightImage3" class="locationImage"></div> 
+        <div class="grid-item2"><pre><span class="firstNightName3"></span></pre></div>
+        <div class="grid-item2"><img id="firstNightImage20" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName20"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage3" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName3"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage20" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName20"></span></pre></div>
+
+        <div class="grid-item2"><img id="firstNightImage4" class="locationImage"></div> 
+        <div class="grid-item2"><pre><span class="firstNightName4"></span></pre></div>
+        <div class="grid-item2"><img id="firstNightImage21" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName21"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage4" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName4"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage21" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName21"></span></pre></div>
+
+        <div class="grid-item2"><img id="firstNightImage5" class="locationImage"></div> 
+        <div class="grid-item2"><pre><span class="firstNightName5"></span></pre></div>
+        <div class="grid-item2"><img id="firstNightImage22" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName22"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage5" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName5"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage22" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName22"></span></pre></div>
+
+        <div class="grid-item2"><img id="firstNightImage6" class="locationImage"></div> 
+        <div class="grid-item2"><pre><span class="firstNightName6"></span></pre></div>
+        <div class="grid-item2"><img id="firstNightImage23" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName23"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage6" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName6"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage23" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName23"></span></pre></div>
+
+        <div class="grid-item2"><img id="firstNightImage7" class="locationImage"></div> 
+        <div class="grid-item2"><pre><span class="firstNightName7"></span></pre></div>
+        <div class="grid-item2"><img id="firstNightImage24" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName24"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage7" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName7"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage24" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName24"></span></pre></div>
+
+        <div class="grid-item2"><img id="firstNightImage8" class="locationImage"></div> 
+        <div class="grid-item2"><pre><span class="firstNightName8"></span></pre></div>
+        <div class="grid-item2"><img id="firstNightImage25" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName25"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage8" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName8"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage25" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName25"></span></pre></div>
+
+        <div class="grid-item2"><img id="firstNightImage9" class="locationImage"></div> 
+        <div class="grid-item2"><pre><span class="firstNightName9"></span></pre></div>
+        <div class="grid-item2"><img id="firstNightImage26" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName26"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage9" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName9"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage26" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName26"></span></pre></div>
+
+        <div class="grid-item2"><img id="firstNightImage10" class="locationImage"></div> 
+        <div class="grid-item2"><pre><span class="firstNightName10"></span></pre></div>
+        <div class="grid-item2"><img id="firstNightImage27" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName27"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage10" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName10"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage27" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName27"></span></pre></div>
+
+        <div class="grid-item2"><img id="firstNightImage11" class="locationImage"></div> 
+        <div class="grid-item2"><pre><span class="firstNightName11"></span></pre></div>
+        <div class="grid-item2"><img id="firstNightImage28" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName28"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage11" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName11"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage28" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName28"></span></pre></div>
+
+        <div class="grid-item2"><img id="firstNightImage12" class="locationImage"></div> 
+        <div class="grid-item2"><pre><span class="firstNightName12"></span></pre></div>
+        <div class="grid-item2"><img id="firstNightImage29" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName29"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage12" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName12"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage29" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName29"></span></pre></div>
+
+        <div class="grid-item2"><img id="firstNightImage13" class="locationImage"></div> 
+        <div class="grid-item2"><pre><span class="firstNightName13"></span></pre></div>
+        <div class="grid-item2"><img id="firstNightImage30" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName30"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage13" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName13"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage30" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName30"></span></pre></div>
+
+        <div class="grid-item2"><img id="firstNightImage14" class="locationImage"></div> 
+        <div class="grid-item2"><pre><span class="firstNightName14"></span></pre></div>
+        <div class="grid-item2"><img id="firstNightImage31" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName31"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage14" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName14"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage31" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName31"></span></pre></div>
+
+        <div class="grid-item2"><img id="firstNightImage15" class="locationImage"></div> 
+        <div class="grid-item2"><pre><span class="firstNightName15"></span></pre></div>
+        <div class="grid-item2"><img id="firstNightImage32" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName32"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage15" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName15"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage32" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName32"></span></pre></div>
+
+        <div class="grid-item2"><img id="firstNightImage16" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName16"></span></pre></div>
+        <div class="grid-item2"><img id="firstNightImage33" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName33"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage16" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName16"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage33" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName33"></span></pre></div>
+
+        <div class="grid-item2"><img id="firstNightImage17" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName17"></span></pre></div>
+        <div class="grid-item2"><img id="firstNightImage34" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="firstNightName34"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage17" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName17"></span></pre></div>
+        <div class="grid-item2"><img id="otherNightImage34" class="locationImage"></div>  
+        <div class="grid-item2"><pre><span class="otherNightName34"></span></pre></div>
+    </div>
+
+    <div class="grid-container1">
+        <div class="grid-item1"></div>
+        <div id="line1" class="grid-item1"><pre><span class="character40"></span></pre></div>
+        <div class="grid-item1"><img id="image41" class="locationImage"></div>  
+        <div id="line2" class="grid-item1"><pre><span class="character41"></span></pre></div>
+        <div class="grid-item1"><img id="image42" class="locationImage"></div>
+        <div id="line3" class="grid-item1"><pre><span class="character42"></span></pre></div>  
+        <div class="grid-item1"><img id="image43" class="locationImage"></div>
+        <div id="line4" class="grid-item41"><pre><span class="character43"></span></pre></div>
+        <div class="grid-item1"><img id="image44" class="locationImage"></div>
+        <div id="line5" class="grid-item1"><pre><span class="character44"></span></pre></div>
+        <div class="grid-item1"><img id="image45" class="locationImage"></div>
+        <div id="line6" class="grid-item1"><pre><span class="character45"></span></pre></div>
+        <div class="grid-item1"><img id="image46" class="locationImage"></div>
+        <div id="line7" class="grid-item1"><pre><span class="character46"></span></pre></div>
+        <div class="grid-item1"><img id="image47" class="locationImage"></div>
+        <div id="line8" class="grid-item1"><pre><span class="character47"></span></pre></div>
+        <div class="grid-item1"><img id="image48" class="locationImage"></div>
+        <div id="line9" class="grid-item1"><pre><span class="character48"></span></pre></div>
+        <div class="grid-item1"><img id="image49" class="locationImage"></div>
+        <div id="line10" class="grid-item1"><pre><span class="character49"></span></pre></div>
+        <div class="grid-item1"><img id="image50" class="locationImage"></div>  
+        <div id="line11" class="grid-item1"><pre><span class="character50"></span></pre></div>
+    </div>
+
+    <div class="grid-container3">
+        <div class="grid-item3 grid-header3"><p>Jinxes</p></div>
+        <div class="grid-item3 grid-divider3"></div>
+        <div class="grid-item3"><img id="jinxImage1a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage1b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText1"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage18a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage18b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText18"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage2a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage2b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText2"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage19a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage19b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText19"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage3a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage3b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText3"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage20a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage20b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText20"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage4a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage4b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText4"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage21a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage21b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText21"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage5a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage5b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText5"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage22a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage22b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText22"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage6a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage6b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText6"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage23a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage23b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText23"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage7a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage7b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText7"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage24a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage24b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText24"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage8a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage8b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText8"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage25a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage25b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText25"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage9a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage9b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText9"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage26a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage26b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText26"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage10a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage10b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText10"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage27a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage27b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText27"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage11a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage11b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText11"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage28a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage28b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText28"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage12a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage12b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText12"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage29a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage29b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText29"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage13a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage13b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText13"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage30a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage30b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText30"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage14a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage14b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText14"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage31a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage31b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText31"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage15a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage15b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText15"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage32a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage32b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText32"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage16a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage16b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText16"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage33a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage33b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText33"></span></p></div>
+        
+        <div class="grid-item3"><img id="jinxImage17a" class="locationImage"></div>
+        <div class="grid-item3"><img id="jinxImage17b" class="locationImage"></div>
+        <div class="grid-item3"><p><span class="jinxText17"></span></p></div>
+        <div class="grid-item3"><img id="jinxImage34a" class="locationImage"></div>  
+        <div class="grid-item3"><img id="jinxImage34b" class="locationImage"></div>  
+        <div class="grid-item3"><p><span class="jinxText34"></span></p></div>
+    </div>
+
+    <h1></h1>
+
+    <div class="grid-container4">
+        <div class="grid-item4 grid-header4"><p>First Night</p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage1" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName1"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility1"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage2" class="locationImage"></div>
+        <div class="grid-item4"><span class="firstNightName2"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility2"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage3" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName3"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility3"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage4" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName4"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility4"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage5" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName5"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility5"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage6" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName6"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility6"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage7" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName7"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility7"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage8" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName8"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility8"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage9" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName9"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility9"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage10" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName10"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility10"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage11" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName11"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility11"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage12" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName12"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility12"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage13" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName13"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility13"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage14" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName14"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility14"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage15" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName15"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility15"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage16" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName16"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility16"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage17" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName17"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility17"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage18" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName18"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility18"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage19" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName19"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility19"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage20" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName20"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility20"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage21" class="locationImage"></div>
+        <div class="grid-item4"><span class="firstNightName21"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility21"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage22" class="locationImage"></div>
+        <div class="grid-item4"><span class="firstNightName22"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility22"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage23" class="locationImage"></div>
+        <div class="grid-item4"><span class="firstNightName23"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility23"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage24" class="locationImage"></div>
+        <div class="grid-item4"><span class="firstNightName24"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility24"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage25" class="locationImage"></div>
+        <div class="grid-item4"><span class="firstNightName25"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility25"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage26" class="locationImage"></div>
+        <div class="grid-item4"><span class="firstNightName26"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility26"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage27" class="locationImage"></div>
+        <div class="grid-item4"><span class="firstNightName27"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility27"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage28" class="locationImage"></div>
+        <div class="grid-item4"><span class="firstNightName28"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility28"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage29" class="locationImage"></div>
+        <div class="grid-item4"><span class="firstNightName29"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility29"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage30" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName30"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility30"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage31" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName31"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility31"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage32" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName32"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility32"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage33" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName33"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility33"></span></p></div>
+        <div class="grid-item4"><img id="firstNightSheetImage34" class="locationImage"></div>
+        <div class="grid-item4"><p><span class="firstNightName34"></span></p></div>
+        <div class="grid-item4"><p><span class="firstNightAbility34"></span></p></div>
+    </div>
+    <pre>                                                                                                                       ⬤ Add 1 or more reminder tokens</pre>
+
+    <h1></h1>
+
+    <div class="grid-container5">
+        <div class="grid-item5 grid-header4"><p>Other Nights</p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage1" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName1"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility1"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage2" class="locationImage"></div>
+        <div class="grid-item5"><span class="otherNightName2"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility2"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage3" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName3"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility3"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage4" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName4"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility4"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage5" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName5"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility5"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage6" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName6"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility6"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage7" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName7"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility7"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage8" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName8"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility8"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage9" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName9"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility9"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage10" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName10"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility10"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage11" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName11"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility11"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage12" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName12"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility12"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage13" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName13"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility13"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage14" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName14"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility14"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage15" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName15"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility15"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage16" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName16"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility16"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage17" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName17"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility17"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage18" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName18"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility18"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage19" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName19"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility19"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage20" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName20"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility20"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage21" class="locationImage"></div>
+        <div class="grid-item5"><span class="otherNightName21"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility21"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage22" class="locationImage"></div>
+        <div class="grid-item5"><span class="otherNightName22"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility22"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage23" class="locationImage"></div>
+        <div class="grid-item5"><span class="otherNightName23"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility23"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage24" class="locationImage"></div>
+        <div class="grid-item5"><span class="otherNightName24"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility24"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage25" class="locationImage"></div>
+        <div class="grid-item5"><span class="otherNightName25"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility25"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage26" class="locationImage"></div>
+        <div class="grid-item5"><span class="otherNightName26"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility26"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage27" class="locationImage"></div>
+        <div class="grid-item5"><span class="otherNightName27"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility27"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage28" class="locationImage"></div>
+        <div class="grid-item5"><span class="otherNightName28"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility28"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage29" class="locationImage"></div>
+        <div class="grid-item5"><span class="otherNightName29"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility29"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage30" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName30"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility30"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage31" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName31"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility31"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage32" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName32"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility32"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage33" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName33"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility33"></span></p></div>
+        <div class="grid-item5"><img id="otherNightSheetImage34" class="locationImage"></div>
+        <div class="grid-item5"><p><span class="otherNightName34"></span></p></div>
+        <div class="grid-item5"><p><span class="otherNightAbility34"></span></p></div>
+    </div>
+    <pre>                                                                                                                       ⬤ Add 1 or more reminder tokens</pre>
+    -->
+</div>
+
+<script src= "jquery.js"></script>
+
+<script src= "Scriptbuilder.js"></script>
+
+</body>
+
 </html>
