@@ -1,0 +1,167 @@
+#background-color {
+	background-color: tan;
+	position: absolute;
+	background-repeat: repeat-y;
+	width:100%;
+	height:500%;
+}
+
+.inputs{
+	visibility: visible;
+	position: absolute;
+    top: 10px;
+	left: 1300px;
+}
+
+.referenceTable{
+    width: 1100px;
+    background-color: tan;
+    padding: 10px;
+}
+
+.referenceTableName{
+    width: 200px;
+}
+
+.referenceTableAbility{
+    width: 350px;
+}
+
+.grid-container1 {
+    display: grid;
+    grid-template-columns: 25px 200px;
+    background-color: tan;
+    padding: 10px;
+}
+
+.grid-table1 {
+    display: grid;
+    grid-template-columns: 50px 75px 300px 50px 50px 75px 300px;
+    background-color: tan;
+    padding: 10px;
+}
+
+.grid-item1 {
+    background-color: tan;
+    padding: 0px;
+    font-size: 14px;
+    text-align: left;
+    margin: auto;
+}
+
+.grid-container2 {
+    display: grid;
+    width: 1110px;
+    grid-template-columns: 40px 200px 40px 200px 150px 40px 200px 40px 200px;
+    background-color: rgb(59, 51, 39);
+    padding: 0px;
+}
+
+.grid-item2 {
+    background-color: tan;
+    padding: 0px;
+    font-size: 14px;
+    text-align: center;
+    margin: 1px;
+    min-height: 0px;
+}
+
+.grid-header2a {
+    background-color: tan;
+    grid-column: 1 / span 4;
+    text-align: center;
+}
+
+.grid-header2b {
+    background-color: tan;
+    grid-column: 6 / span 4;
+    text-align: center;
+}
+
+.grid-divider {
+    background-color: tan;
+    grid-column: 5;
+    grid-row: 1 / span 18;
+    text-align: center;
+    min-height: 0px;
+}
+
+.grid-container3 {
+    display: grid;
+    width: 660px;
+    grid-template-columns: 40px 40px 200px 100px 40px 40px 200px;
+    background-color: rgb(59, 51, 39);
+    padding: 0px;
+}
+
+.grid-item3 {
+    background-color: tan;
+    padding: 0px;
+    font-size: 14px;
+    text-align: center;
+    margin: 1px;
+}
+
+.grid-header3 {
+    background-color: tan;
+    grid-column: 1 / span 7;
+    text-align: center;
+}
+
+.grid-divider3 {
+    background-color: tan;
+    grid-column: 4;
+    grid-row: 2 / span 18;
+    text-align: center;
+    min-height: 0px;
+}
+
+.grid-container4 {
+    display: grid;
+    width: 1125px;
+    grid-template-columns: 25px 200px 900px;
+    background-color: rgb(59, 51, 39);;
+    padding: 10px;
+}
+
+.grid-item4 {
+    background-color: tan;
+    padding: 0px;
+    font-size: 14px;
+    text-align: left;
+    margin: 1px;
+}
+
+.grid-header4 {
+    background-color: tan;
+    grid-column: 1 / span 3;
+    text-align: center;
+}
+
+.grid-container5 {
+    display: grid;
+    width: 1125px;
+    grid-template-columns: 25px 200px 900px;
+    background-color: rgb(59, 51, 39);;
+    padding: 10px;
+}
+
+.grid-item5 {
+    background-color: tan;
+    padding: 0px;
+    font-size: 14px;
+    text-align: left;
+    margin: 1px;
+}
+
+.grid-header5 {
+    background-color: tan;
+    grid-column: 1 / span 3;
+    text-align: center;
+}
+
+.locationImage{
+	visibility: visible;
+	width:25px;
+}
+
