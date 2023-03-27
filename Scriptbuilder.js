@@ -96,7 +96,7 @@ $(document).ready( function() {
         headerCell.colSpan = "6";
         headerCell.innerHTML = "-----" + scriptNameOutput + "Townsfolk---";
         var townsfolkArr = [];
-        for(var i=1; i<100; i++){
+        for(var i=1; i<700; i++){
             for(var j=0; j<selectedTF.length; j++){
                 for(var k=0; k<response.length; k++){
                     if((response[k].sheetOrder === i) && (response[k].name === selectedTF[j])){
@@ -149,7 +149,7 @@ $(document).ready( function() {
         headerCell.colSpan = "6";
         headerCell.innerHTML = "----------------------------------------------------------------------------------------------------------------------------------------Outsiders---";
         var outsiderArr = [];
-        for(var i=1; i<100; i++){
+        for(var i=1; i<400; i++){
             for(var j=0; j<selectedOut.length; j++){
                 for(var k=0; k<response.length; k++){
                     if((response[k].sheetOrder === i) && (response[k].name === selectedOut[j])){
@@ -202,7 +202,7 @@ $(document).ready( function() {
         headerCell.colSpan = "6";
         headerCell.innerHTML = "----------------------------------------------------------------------------------------------------------------------------------------Minions-----";
         var minionArr = [];
-        for(var i=1; i<100; i++){
+        for(var i=1; i<400; i++){
             for(var j=0; j<selectedMin.length; j++){
                 for(var k=0; k<response.length; k++){
                     if((response[k].sheetOrder === i) && (response[k].name === selectedMin[j])){
@@ -255,7 +255,7 @@ $(document).ready( function() {
         headerCell.colSpan = "6";
         headerCell.innerHTML = "----------------------------------------------------------------------------------------------------------------------------------------Demons------";
         var demonArr = [];
-        for(var i=1; i<100; i++){
+        for(var i=1; i<400; i++){
             for(var j=0; j<selectedOut.length; j++){
                 for(var k=0; k<response.length; k++){
                     if((response[k].sheetOrder === i) && (response[k].name === selectedDem[j])){
@@ -303,22 +303,21 @@ $(document).ready( function() {
                 .map(option => option.value);
         const travelerTable = document.querySelector("#playerSheetTrvData");
         travelerTable.innerHTML = "";
-        var travlerArr = [];
-        for(var i=1; i<100; i++){
-            for(var j=0; j<selectedOut.length; j++){
-                for(var k=0; k<response.length; k++){
-                    if((response[k].sheetOrder === i) && (response[k].name === selectedTrv[j])){
-                        var character = {
-                            name: response[k].name,
-                            imageAddress: response[k].imageAddress,
-                            ability: response[k].ability
-                        };
-                        travlerArr.push(character);
-                        characters.push(response[k].name);
+        var travelerArr = [];
+        for(var j=0; j<selectedOut.length; j++){
+            for(var k=0; k<response.length; k++){
+                if(response[k].name === selectedTrv[j]){
+                    var character = {
+                        name: response[k].name,
+                        imageAddress: response[k].imageAddress,
+                        ability: response[k].ability
                     };
+                    travelerArr.push(character);
+                    characters.push(response[k].name);
                 };
             };
         };
+
 
 
         // Night Sheet: divide by two and floor.
@@ -354,6 +353,33 @@ $(document).ready( function() {
         };*/
 
         /*
+        //*******Player Sheet: Townsfolk**************
+        //*****First Night Info 1-100*****************
+        //*****Every Night Info 101-200***************
+        //*****Other Night Info 201-300***************
+        //*****Every Day Info 301-400*****************
+        //*****Death Related Info 401-500*************
+        //*****Once Per Game 501-600******************
+        //*****Protection 601-700*********************
+        //********************************************
+        //*******Player Sheet: Outsiders**************
+        //*****Limited Action 1-100*******************
+        //*****False Info 101-200*********************
+        //*****Death Related Info 201-300*************
+        //*****Once Per Game 301-400******************
+        //********************************************
+        //********Player Sheet: Minions***************
+        //*****False Info 1-100***********************
+        //*****Protection pt1 101-200*****************
+        //*****Death Related 201-300******************
+        //*****Evil Info pt2 301-400******************
+        //********************************************
+        //********Player Sheet: Demons****************
+        //*****Kills Other Night 1-100****************
+        //*****ST Chosen Deaths 101-200***************
+        //*****Other Deaths 201-300*******************
+        //*****No Deaths 301-400**********************
+        //********************************************
         //**********Night Order Player Sheet**********
         //*****First Night Numbering Scheme***********
         //*****Travelers 1-100************************
