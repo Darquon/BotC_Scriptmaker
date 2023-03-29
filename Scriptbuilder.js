@@ -77,7 +77,6 @@ $(document).ready( function() {
     document.getElementById('travelerList').onchange = updateSheet;
             
     function updateSheet(){
-        var line = 1;
         var characters = [];
         //**********ScriptName**********
         scriptName = scriptNameInput.value;
@@ -85,7 +84,15 @@ $(document).ready( function() {
         for(var i=131-scriptNameOutput.length; i>0; i--){
             scriptNameOutput = scriptNameOutput + "-";
         };
-        //**********Townsfolk**********
+        //*******Player Sheet: Townsfolk**************
+        //*****First Night Info 1-100*****************
+        //*****Every Night Info 101-200***************
+        //*****Other Night Info 201-300***************
+        //*****Every Day Info 301-400*****************
+        //*****Death Related Info 401-500*************
+        //*****Once Per Game 501-600******************
+        //*****Protection 601-700*********************
+        //********************************************
         var selectedTF = [...townsfolkList.options]
                 .filter(option => option.selected)
                 .map(option => option.value);
@@ -117,7 +124,11 @@ $(document).ready( function() {
             var outCell2 = "";
             var outCell4 = "";
             var outCell5 = "";
+            var div1 = document.createElement("div");
+            div1.className = "image-container";
             var img1 = new Image();
+            var div2 = document.createElement("div");
+            div2.className = "image-container";
             var img2 = new Image();
             img1.src = townsfolkArr[i].imageAddress;
             outCell1 = townsfolkArr[i].name;
@@ -129,16 +140,23 @@ $(document).ready( function() {
             };
             img1.style.width = imageWidth;
             img2.style.width = imageWidth;
-            newRow.append(img1);
+            div1.appendChild(img1);
+            newRow.append($("<td>").append(div1)).attr("class", "referenceTableName");
             newRow.append($("<td>").text(outCell1)).attr("class","referenceTableName");
             newRow.append($("<td>").text(outCell2)).attr("class","referenceTableAbility");
-            newRow.append(img2);
+            div2.appendChild(img2);
+            newRow.append($("<td>").append(div2)).attr("class", "referenceTableName");
             newRow.append($("<td>").text(outCell4)).attr("class","referenceTableName");
             newRow.append($("<td>").text(outCell5)).attr("class","referenceTableAbility");
             $(townsfolkTable).append(newRow);
             i++;
         };
-        //**********Outsiders**********
+        //*******Player Sheet: Outsiders**************
+        //*****Limited Action 1-100*******************
+        //*****False Info 101-200*********************
+        //*****Death Related Info 201-300*************
+        //*****Once Per Game 301-400******************
+        //********************************************
         var selectedOut = [...outsiderList.options]
                 .filter(option => option.selected)
                 .map(option => option.value);
@@ -170,7 +188,11 @@ $(document).ready( function() {
             var outCell2 = "";
             var outCell4 = "";
             var outCell5 = "";
+            var div1 = document.createElement("div");
+            div1.className = "image-container";
             var img1 = new Image();
+            var div2 = document.createElement("div");
+            div2.className = "image-container";
             var img2 = new Image();
             img1.src = outsiderArr[i].imageAddress;
             outCell1 = outsiderArr[i].name;
@@ -182,16 +204,23 @@ $(document).ready( function() {
             };
             img1.style.width = imageWidth;
             img2.style.width = imageWidth;
-            newRow.append(img1);
+            div1.appendChild(img1);
+            newRow.append($("<td>").append(div1)).attr("class", "referenceTableName");
             newRow.append($("<td>").text(outCell1)).attr("class","referenceTableName");
             newRow.append($("<td>").text(outCell2)).attr("class","referenceTableAbility");
-            newRow.append(img2);
+            div2.appendChild(img2);
+            newRow.append($("<td>").append(div2)).attr("class", "referenceTableName");
             newRow.append($("<td>").text(outCell4)).attr("class","referenceTableName");
             newRow.append($("<td>").text(outCell5)).attr("class","referenceTableAbility");
             $(outsiderTable).append(newRow);
             i++;
         };
-        //**********Minions**********
+        //********Player Sheet: Minions***************
+        //*****False Info 1-100***********************
+        //*****Protection pt1 101-200*****************
+        //*****Death Related 201-300******************
+        //*****Evil Info pt2 301-400******************
+        //********************************************
         var selectedMin = [...minionList.options]
                 .filter(option => option.selected)
                 .map(option => option.value);
@@ -223,7 +252,11 @@ $(document).ready( function() {
             var outCell2 = "";
             var outCell4 = "";
             var outCell5 = "";
+            var div1 = document.createElement("div");
+            div1.className = "image-container";
             var img1 = new Image();
+            var div2 = document.createElement("div");
+            div2.className = "image-container";
             var img2 = new Image();
             img1.src = minionArr[i].imageAddress;
             outCell1 = minionArr[i].name;
@@ -235,16 +268,23 @@ $(document).ready( function() {
             };
             img1.style.width = imageWidth;
             img2.style.width = imageWidth;
-            newRow.append(img1);
+            div1.appendChild(img1);
+            newRow.append($("<td>").append(div1)).attr("class", "referenceTableName");
             newRow.append($("<td>").text(outCell1)).attr("class","referenceTableName");
             newRow.append($("<td>").text(outCell2)).attr("class","referenceTableAbility");
-            newRow.append(img2);
+            div2.appendChild(img2);
+            newRow.append($("<td>").append(div2)).attr("class", "referenceTableName");
             newRow.append($("<td>").text(outCell4)).attr("class","referenceTableName");
             newRow.append($("<td>").text(outCell5)).attr("class","referenceTableAbility");
             $(minionTable).append(newRow);
             i++;
         };
-        //**********Demons**********
+        //********Player Sheet: Demons****************
+        //*****Kills Other Night 1-100****************
+        //*****ST Chosen Deaths 101-200***************
+        //*****Other Deaths 201-300*******************
+        //*****No Deaths 301-400**********************
+        //********************************************
         var selectedDem = [...demonList.options]
                 .filter(option => option.selected)
                 .map(option => option.value);
@@ -256,7 +296,7 @@ $(document).ready( function() {
         headerCell.innerHTML = "----------------------------------------------------------------------------------------------------------------------------------------Demons------";
         var demonArr = [];
         for(var i=1; i<400; i++){
-            for(var j=0; j<selectedOut.length; j++){
+            for(var j=0; j<selectedDem.length; j++){
                 for(var k=0; k<response.length; k++){
                     if((response[k].sheetOrder === i) && (response[k].name === selectedDem[j])){
                         var character = {
@@ -276,7 +316,11 @@ $(document).ready( function() {
             var outCell2 = "";
             var outCell4 = "";
             var outCell5 = "";
+            var div1 = document.createElement("div");
+            div1.className = "image-container";
             var img1 = new Image();
+            var div2 = document.createElement("div");
+            div2.className = "image-container";
             var img2 = new Image();
             img1.src = demonArr[i].imageAddress;
             outCell1 = demonArr[i].name;
@@ -288,10 +332,12 @@ $(document).ready( function() {
             };
             img1.style.width = imageWidth;
             img2.style.width = imageWidth;
-            newRow.append(img1);
+            div1.appendChild(img1);
+            newRow.append($("<td>").append(div1)).attr("class", "referenceTableName");
             newRow.append($("<td>").text(outCell1)).attr("class","referenceTableName");
             newRow.append($("<td>").text(outCell2)).attr("class","referenceTableAbility");
-            newRow.append(img2);
+            div2.appendChild(img2);
+            newRow.append($("<td>").append(div2)).attr("class", "referenceTableName");
             newRow.append($("<td>").text(outCell4)).attr("class","referenceTableName");
             newRow.append($("<td>").text(outCell5)).attr("class","referenceTableAbility");
             $(demonTable).append(newRow);
@@ -301,10 +347,8 @@ $(document).ready( function() {
         var selectedTrv = [...travelerList.options]
                 .filter(option => option.selected)
                 .map(option => option.value);
-        const travelerTable = document.querySelector("#playerSheetTrvData");
-        travelerTable.innerHTML = "";
         var travelerArr = [];
-        for(var j=0; j<selectedOut.length; j++){
+        for(var j=0; j<selectedTrv.length; j++){
             for(var k=0; k<response.length; k++){
                 if(response[k].name === selectedTrv[j]){
                     var character = {
@@ -317,69 +361,6 @@ $(document).ready( function() {
                 };
             };
         };
-
-
-
-        // Night Sheet: divide by two and floor.
-
-
-
-        /*for(var i=0; i<travlerArr.length; i++){           
-            var newRow = $("<tr>");
-            var outCell1 = "";
-            var outCell2 = "";
-            var outCell4 = "";
-            var outCell5 = "";
-            var img1 = new Image();
-            var img2 = new Image();
-            img1.src = travlerArr[i].imageAddress;
-            outCell1 = travlerArr[i].name;
-            outCell2 = travlerArr[i].ability;
-            if(travlerArr.length > i+1){
-                img2.src = travlerArr[i+1].imageAddress;
-                outCell4 = travlerArr[i+1].name;
-                outCell5 = travlerArr[i+1].ability;
-            };
-            img1.style.width = imageWidth;
-            img2.style.width = imageWidth;
-            newRow.append(img1);
-            newRow.append($("<td>").text(outCell1)).attr("class","referenceTableName");
-            newRow.append($("<td>").text(outCell2)).attr("class","referenceTableAbility");
-            newRow.append(img2);
-            newRow.append($("<td>").text(outCell4)).attr("class","referenceTableName");
-            newRow.append($("<td>").text(outCell5)).attr("class","referenceTableAbility");
-            $(travelerTable).append(newRow);
-            i++;
-        };*/
-
-        /*
-        //*******Player Sheet: Townsfolk**************
-        //*****First Night Info 1-100*****************
-        //*****Every Night Info 101-200***************
-        //*****Other Night Info 201-300***************
-        //*****Every Day Info 301-400*****************
-        //*****Death Related Info 401-500*************
-        //*****Once Per Game 501-600******************
-        //*****Protection 601-700*********************
-        //********************************************
-        //*******Player Sheet: Outsiders**************
-        //*****Limited Action 1-100*******************
-        //*****False Info 101-200*********************
-        //*****Death Related Info 201-300*************
-        //*****Once Per Game 301-400******************
-        //********************************************
-        //********Player Sheet: Minions***************
-        //*****False Info 1-100***********************
-        //*****Protection pt1 101-200*****************
-        //*****Death Related 201-300******************
-        //*****Evil Info pt2 301-400******************
-        //********************************************
-        //********Player Sheet: Demons****************
-        //*****Kills Other Night 1-100****************
-        //*****ST Chosen Deaths 101-200***************
-        //*****Other Deaths 201-300*******************
-        //*****No Deaths 301-400**********************
-        //********************************************
         //**********Night Order Player Sheet**********
         //*****First Night Numbering Scheme***********
         //*****Travelers 1-100************************
@@ -400,86 +381,207 @@ $(document).ready( function() {
         //*****Info 501-600***************************
         //*****End of Night 601-700*******************
         //********************************************
-        
-        //*****First Night
         characters.push("Demon Info");
         characters.push("Minion Info");
         characters.push("Traveler Info");
-        line = 1;
-        for(var i=1; i<600; i++){
+        var firstNightArr = [];
+        var otherNightArr = [];
+        for(var i=1; i<700; i++){
             for(var j=0; j<characters.length; j++){
                 for(var k=0; k<response.length; k++){
                     if((response[k].firstNight === i) && (response[k].name === characters[j])){
-                        if(line<35){
-                            charImage = document.getElementById('firstNightImage'+line);
-                            charImage.src = response[k].imageAddress;
-                            charImage = document.getElementById('firstNightSheetImage'+line);
-                            charImage.src = response[k].imageAddress;
+                        var character = {
+                            name: response[k].name,
+                            imageAddress: response[k].imageAddress,
+                            reminder: response[k].firstNightReminder
                         };
-                        $('.firstNightName'+line).html(line + " " + response[k].name);
-                        $('.firstNightAbility'+line).html(line + " " + response[k].firstNightReminder);
-                        line++;
+                        firstNightArr.push(character);
                     };
-                };
-            };
-        };
-
-        //*****Other Nights
-        line = 1;
-        for(var i=1; i<800; i++){
-            for(var j=0; j<characters.length; j++){
-                for(var k=0; k<response.length; k++){
                     if((response[k].otherNight === i) && (response[k].name === characters[j])){
-                        if(line<35){
-                            charImage = document.getElementById('otherNightImage'+line);
-                            charImage.src = response[k].imageAddress;
-                            charImage = document.getElementById('otherNightSheetImage'+line);
-                            charImage.src = response[k].imageAddress;
+                        var character = {
+                            name: response[k].name,
+                            imageAddress: response[k].imageAddress,
+                            reminder: response[k].otherNightReminder
                         };
-                        $('.otherNightName'+line).html(line + " " + response[k].name);
-                        $('.otherNightAbility'+line).html(line + " " + response[k].otherNightReminder);
-                        line++;
-                    };
+                        otherNightArr.push(character)
+                    }
                 };
             };
         };
-        //*****Jinx Code
-        line = 1;
+        //****Player Night Sheet Data*****
+        const playerFirstNightTable = document.querySelector("#playerFirstNightOrder");
+        const playerOtherNightTable = document.querySelector("#playerOtherNightOrder");
+        playerFirstNightTable.innerHTML = "";
+        var headerRow = playerFirstNightTable.insertRow(0);
+        var headerCell = headerRow.insertCell(0);
+        headerCell.colSpan = "4";
+        headerCell.innerHTML = "First Night";
+        headerCell.setAttribute("class", "nightReferenceTableHeader");
+        for(var i=0, j=Math.ceil(firstNightArr.length/2), k=Math.ceil(otherNightArr.length/2); i<Math.ceil(firstNightArr.length/2) && i<Math.ceil(otherNightArr.length/2); i++, j++, k++){       
+            var newRow = $("<tr>");
+            var outCell0 = "";
+            var div1 = document.createElement("div");
+            div1.className = "image-container";
+            var img1 = new Image();
+            var outCell1 = "";
+            var outCell2 = "";
+            var div2 = document.createElement("div");
+            div2.className = "image-container";
+            var img2 = new Image();
+            var outCell3 = "";
+            if(i<Math.ceil(firstNightArr.length/2)){
+                if(firstNightArr[i].name === "Traveler Info" || firstNightArr[i].name === "Minion Info" || firstNightArr[i].name === "Demon Info"){
+                    newRow.append($("<td>").text(outCell0)).attr("class", "nightReferenceTableName");
+                    outCell1 = firstNightArr[i].name;
+                    newRow.append($("<td>").text(outCell1)).attr("class", "nightReferenceTableName");
+                } else {
+                    img1.src = firstNightArr[i].imageAddress;
+                    img1.style.width = imageWidth;
+                    div1.appendChild(img1);
+                    newRow.append($("<td>").append(div1)).attr("class", "nightReferenceTableName");
+                    outCell1 = firstNightArr[i].name;
+                    newRow.append($("<td>").text(outCell1)).attr("class","nightReferenceTableName");
+                };
+            };
+            if(j<firstNightArr.length){
+                if(firstNightArr[j].name === "Traveler Info" || firstNightArr[j].name === "Minion Info" || firstNightArr[j].name === "Demon Info"){
+                    newRow.append($("<td>").text(outCell2)).attr("class", "nightReferenceTableName");
+                    outCell3 = firstNightArr[j].name;
+                    newRow.append($("<td>").text(outCell3)).attr("class", "nightReferenceTableName");
+                } else {
+                    img2.src = firstNightArr[j].imageAddress;
+                    img2.style.width = imageWidth;
+                    div2.appendChild(img2);
+                    newRow.append($("<td>").append(div2)).attr("class", "nightReferenceTableName");
+                    outCell3 = firstNightArr[j].name;
+                    newRow.append($("<td>").text(outCell3)).attr("class","nightReferenceTableName");
+                };
+            };
+            $(playerFirstNightTable).append(newRow);
+        };
+        playerOtherNightTable.innerHTML = "";
+        var headerRow = playerOtherNightTable.insertRow(0);
+        var headerCell = headerRow.insertCell(0);
+        headerCell.colSpan = "4";
+        headerCell.innerHTML = "Other Nights";
+        headerCell.setAttribute("class", "nightReferenceTableHeader");
+        for(var i=0, j=Math.ceil(firstNightArr.length/2), k=Math.ceil(otherNightArr.length/2); i<Math.ceil(firstNightArr.length/2) && i<Math.ceil(otherNightArr.length/2); i++, j++, k++){       
+            var newRow = $("<tr>");
+            var outCell4 = "";
+            var div3 = document.createElement("div");
+            div3.className = "image-container";
+            var img3 = new Image();
+            var outCell5 = "";
+            var outCell6 = "";
+            var div4 = document.createElement("div");
+            div4.className = "image-container";
+            var img4 = new Image();
+            var outCell7 = "";
+            if(i<Math.ceil(otherNightArr.length/2)){
+                if(otherNightArr[i].name === "Traveler Info"){
+                    newRow.append($("<td>").text(outCell4)).attr("class", "nightReferenceTableName");
+                    outCell5 = otherNightArr[i].name;
+                    newRow.append($("<td>").text(outCell5)).attr("class", "nightReferenceTableName");
+                } else {
+                    img3.src = otherNightArr[i].imageAddress;
+                    img3.style.width = imageWidth;
+                    div3.appendChild(img3);
+                    newRow.append($("<td>").append(div3)).attr("class", "nightReferenceTableName");
+                    outCell5 = otherNightArr[i].name;
+                    newRow.append($("<td>").text(outCell5)).attr("class","nightReferenceTableName");
+                };
+            };
+            if(k<otherNightArr.length){
+                if(otherNightArr[k].name === "Traveler Info"){
+                    newRow.append($("<td>").text(outCell6)).attr("class", "nightReferenceTableName");
+                    outCell6 = otherNightArr[k].name;
+                    newRow.append($("<td>").text(outCell7)).attr("class", "nightReferenceTableName");
+                } else {
+                    img4.src = otherNightArr[k].imageAddress;
+                    img4.style.width = imageWidth;
+                    div4.appendChild(img4);
+                    newRow.append($("<td>").append(div4)).attr("class", "nightReferenceTableName");
+                    outCell7 = otherNightArr[k].name;
+                    newRow.append($("<td>").text(outCell7)).attr("class","nightReferenceTableName");
+                };
+            };
+            $(playerOtherNightTable).append(newRow);
+        };
+        //**********Travelers**********
+        const travelerTable = document.querySelector("#playerSheetTrvData");
+        travelerTable.innerHTML = "";
+        var headerRow = travelerTable.insertRow(0);
+        var headerCell = headerRow.insertCell(0);
+        headerCell.colSpan = "6";
+        headerCell.innerHTML = "------------------------------------------------------------------Travelers---------------------------------------------------------------------------";
+        for(var i=0; i<travelerArr.length; i++){           
+            var newRow = $("<tr>");
+            var outCell1 = "";
+            var outCell2 = "";
+            var outCell4 = "";
+            var outCell5 = "";
+            var div1 = document.createElement("div");
+            div1.className = "image-container";
+            var img1 = new Image();
+            var div2 = document.createElement("div");
+            div2.className = "image-container";
+            var img2 = new Image();
+            img1.src = travelerArr[i].imageAddress;
+            outCell1 = travelerArr[i].name;
+            outCell2 = travelerArr[i].ability;
+            if(travelerArr.length > i+1){
+                img2.src = travelerArr[i+1].imageAddress;
+                outCell4 = travelerArr[i+1].name;
+                outCell5 = travelerArr[i+1].ability;
+            };
+            img1.style.width = imageWidth;
+            img2.style.width = imageWidth;
+            div1.appendChild(img1);
+            newRow.append($("<td>").append(div1)).attr("class", "referenceTableName");
+            newRow.append($("<td>").text(outCell1)).attr("class","referenceTableName");
+            newRow.append($("<td>").text(outCell2)).attr("class","referenceTableAbility");
+            div2.appendChild(img2);
+            newRow.append($("<td>").append(div2)).attr("class", "referenceTableName");
+            newRow.append($("<td>").text(outCell4)).attr("class","referenceTableName");
+            newRow.append($("<td>").text(outCell5)).attr("class","referenceTableAbility");
+            $(travelerTable).append(newRow);
+            i++;
+        };
+        //***********Jinxes************
+        var jinxarr = [];
         for (var i=0; i<characters.length; i++){
             for(var j=0; j<response.length; j++){
                 if((response[j].name === characters[i]) && (response[j].jinx1 != "undefined")){
                     for (var k=0; k<characters.length; k++){
                         if(response[j].jinx1 === characters[k]) {
-                            console.log("i:" + characters[i] + " j:" + response[j].name + " & jinx1=" + response[j].jinx1 + " k:" + characters[k]);
-                            if(line<35){
-                                charImage = document.getElementById('jinxImage'+line+"a");
-                                charImage.src = response[j].imageAddress;
-                                for(var l=j+1; l<response.length; l++){
-                                    if(response[l].name === characters[k]) {
-                                        charImage = document.getElementById('jinxImage'+line+"b");
-                                        charImage.src = response[l].imageAddress;
+                            for(var l=j+1; l<response.length; l++){
+                                if(response[l].name === characters[k]) {
+                                    var character = {
+                                        name: response[j].name,
+                                        imageAddress: response[j].imageAddress,
+                                        name2: response[l].name,
+                                        imageAddress2: response[l].imageAddress,
+                                        jinxText: response[j].jinx1Text
                                     };
+                                    jinxarr.push(character);
                                 };
-                                $('.jinxText'+line).html(response[j].jinx1Text);
-                                line++
                             };
                         };
                     };
                     if(response[j].jinx2 != "undefined"){
                         for (var k=0; k<characters.length; k++){
                             if(response[j].jinx2 === characters[k]) {
-                                console.log("i:" + characters[i] + " j:" + response[j].name + " & jinx2=" + response[j].jinx1 + " k:" + characters[k]);
-                                if(line<35){
-                                    charImage = document.getElementById('jinxImage'+line+"a");
-                                    charImage.src = response[j].imageAddress;
-                                    for(var l=j+1; l<response.length; l++){
-                                        if(response[l].name === characters[k]) {
-                                            charImage = document.getElementById('jinxImage'+line+"b");
-                                            charImage.src = response[l].imageAddress;
+                                for(var l=j+1; l<response.length; l++){
+                                    if(response[l].name === characters[k]) {
+                                        var character = {
+                                            name: response[j].name,
+                                            imageAddress: response[j].imageAddress,
+                                            name2: response[l].name,
+                                            imageAddress2: response[l].imageAddress,
+                                            jinxText: response[j].jinx2Text
                                         };
+                                        jinxarr.push(character);
                                     };
-                                    $('.jinxText'+line).html(response[j].jinx2Text);
-                                    line++
                                 };
                             };
                         };
@@ -487,18 +589,17 @@ $(document).ready( function() {
                     if(response[j].jinx3 != "undefined"){
                         for (var k=0; k<characters.length; k++){
                             if(response[j].jinx3 === characters[k]) {
-                                console.log("i:" + characters[i] + " j:" + response[j].name + " & jinx3=" + response[j].jinx1 + " k:" + characters[k]);
-                                if(line<35){
-                                    charImage = document.getElementById('jinxImage'+line+"a");
-                                    charImage.src = response[j].imageAddress;
-                                    for(var l=j+1; l<response.length; l++){
-                                        if(response[l].name === characters[k]) {
-                                            charImage = document.getElementById('jinxImage'+line+"b");
-                                            charImage.src = response[l].imageAddress;
+                                for(var l=j+1; l<response.length; l++){
+                                    if(response[l].name === characters[k]) {
+                                        var character = {
+                                            name: response[j].name,
+                                            imageAddress: response[j].imageAddress,
+                                            name2: response[l].name,
+                                            imageAddress2: response[l].imageAddress,
+                                            jinxText: response[j].jinx3Text
                                         };
+                                        jinxarr.push(character);
                                     };
-                                    $('.jinxText'+line).html(response[j].jinx3Text);
-                                    line++
                                 };
                             };
                         };
@@ -506,18 +607,17 @@ $(document).ready( function() {
                     if(response[j].jinx4 != "undefined"){
                         for (var k=0; k<characters.length; k++){
                             if(response[j].jinx4 === characters[k]) {
-                                console.log("i:" + characters[i] + " j:" + response[j].name + " & jinx4=" + response[j].jinx1 + " k:" + characters[k]);
-                                if(line<35){
-                                    charImage = document.getElementById('jinxImage'+line+"a");
-                                    charImage.src = response[j].imageAddress;
-                                    for(var l=j+1; l<response.length; l++){
-                                        if(response[l].name === characters[k]) {
-                                            charImage = document.getElementById('jinxImage'+line+"b");
-                                            charImage.src = response[l].imageAddress;
+                                for(var l=j+1; l<response.length; l++){
+                                    if(response[l].name === characters[k]) {
+                                        var character = {
+                                            name: response[j].name,
+                                            imageAddress: response[j].imageAddress,
+                                            name2: response[l].name,
+                                            imageAddress2: response[l].imageAddress,
+                                            jinxText: response[j].jinx4Text
                                         };
+                                        jinxarr.push(character);
                                     };
-                                    $('.jinxText'+line).html(response[j].jinx4Text);
-                                    line++
                                 };
                             };
                         };
@@ -525,18 +625,17 @@ $(document).ready( function() {
                     if(response[j].jinx5 != "undefined"){
                         for (var k=0; k<characters.length; k++){
                             if(response[j].jinx5 === characters[k]) {
-                                console.log("i:" + characters[i] + " j:" + response[j].name + " & jinx5=" + response[j].jinx1 + " k:" + characters[k]);
-                                if(line<35){
-                                    charImage = document.getElementById('jinxImage'+line+"a");
-                                    charImage.src = response[i].imageAddress;
-                                    for(var l=j+1; l<response.length; l++){
-                                        if(response[l].name === characters[k]) {
-                                            charImage = document.getElementById('jinxImage'+line+"b");
-                                            charImage.src = response[l].imageAddress;
+                                for(var l=j+1; l<response.length; l++){
+                                    if(response[l].name === characters[k]) {
+                                        var character = {
+                                            name: response[j].name,
+                                            imageAddress: response[j].imageAddress,
+                                            name2: response[l].name,
+                                            imageAddress2: response[l].imageAddress,
+                                            jinxText: response[j].jinx5Text
                                         };
+                                        jinxarr.push(character);
                                     };
-                                    $('.jinxText'+line).html(response[j].jinx5Text);
-                                    line++
                                 };
                             };
                         };
@@ -544,25 +643,149 @@ $(document).ready( function() {
                     if(response[j].jinx6 != "undefined"){
                         for (var k=0; k<characters.length; k++){
                             if(response[j].jinx6 === characters[k]) {
-                                console.log("i:" + characters[i] + " j:" + response[j].name + " & jinx6=" + response[j].jinx1 + " k:" + characters[k]);
-                                if(line<35){
-                                    charImage = document.getElementById('jinxImage'+line+"a");
-                                    charImage.src = response[i].imageAddress;
-                                    for(var l=j+1; l<response.length; l++){
-                                        if(response[l].name === characters[k]) {
-                                            charImage = document.getElementById('jinxImage'+line+"b");
-                                            charImage.src = response[l].imageAddress;
+                                for(var l=j+1; l<response.length; l++){
+                                    if(response[l].name === characters[k]) {
+                                        var character = {
+                                            name: response[j].name,
+                                            imageAddress: response[j].imageAddress,
+                                            name2: response[l].name,
+                                            imageAddress2: response[l].imageAddress,
+                                            jinxText: response[j].jinx6Text
                                         };
+                                        jinxarr.push(character);
                                     };
-                                    $('.jinxText'+line).html(response[j].jinx6Text);
-                                    line++
                                 };
                             };
                         };
                     };
                 };
             };
-        };*/
+        };
+        const jinxTable = document.querySelector("#jinxData");
+        jinxTable.innerHTML = "";
+        var headerRow = jinxTable.insertRow(0);
+        var headerCell = headerRow.insertCell(0);
+        headerCell.colSpan = "6";
+        if(jinxarr.length>0){
+            headerCell.innerHTML = "------------------------------------------------------------------Jinxes---------------------------------------------------------------------------";
+        } else {
+            headerCell.innerHTML = "---------------------------------------------------There are no Jinxes on this script--------------------------------------------------------------";
+        };        
+        for(var i=0; i<jinxarr.length; i++){           
+            var newRow = $("<tr>");
+            var div1 = document.createElement("div");
+            div1.className = "image-container";
+            var img1 = new Image();
+            var div2 = document.createElement("div");
+            div2.className = "image-container";
+            var img2 = new Image();
+            var outCell2 = "";
+            var div3 = document.createElement("div");
+            div3.className = "image-container";
+            var img3 = new Image();
+            var div4 = document.createElement("div");
+            div4.className = "image-container";
+            var img4 = new Image();
+            var outCell5 = "";
+            img1.src = jinxarr[i].imageAddress;
+            img2.src = jinxarr[i].imageAddress2;
+            outCell2 = jinxarr[i].jinxText;
+            if(jinxarr.length > i+1){
+                img3.src = jinxarr[i+1].imageAddress;
+                img4.src = jinxarr[i+1].imageAddress2;
+                outCell5 = jinxarr[i+1].jinxText;
+            };
+            img1.style.width = imageWidth;
+            img2.style.width = imageWidth;
+            img3.style.width = imageWidth;
+            img4.style.width = imageWidth;
+            div1.appendChild(img1);
+            newRow.append($("<td>").append(div1)).attr("class", "referenceTableName");
+            div2.appendChild(img2);
+            newRow.append($("<td>").append(div2)).attr("class", "referenceTableName");
+            newRow.append($("<td>").text(outCell2)).attr("class","referenceTableAbility");
+            div3.appendChild(img3);
+            newRow.append($("<td>").append(div3)).attr("class", "referenceTableName");
+            div4.appendChild(img4);
+            newRow.append($("<td>").append(div4)).attr("class", "referenceTableName");
+            newRow.append($("<td>").text(outCell5)).attr("class","referenceTableAbility");
+            $(jinxTable).append(newRow);
+            i++;
+        };
+        //****First Night ST Sheet*****
+        const storyTellerFirstNightTable = document.querySelector("#storyTellerFirstNightSheet");
+        storyTellerFirstNightTable.innerHTML = "";
+        var headerRow = storyTellerFirstNightTable.insertRow(0);
+        var headerCell = headerRow.insertCell(0);
+        headerCell.colSpan = "4";
+        headerCell.innerHTML = "First Night";
+        headerCell.setAttribute("class", "nightReferenceTableHeader");
+        for(var i=0; i<firstNightArr.length; i++){       
+            var newRow = $("<tr>");
+            var outCell0 = "";
+            var div1 = document.createElement("div");
+            div1.className = "image-container";
+            var img1 = new Image();
+            var outCell1 = "";
+            var outCell2 = "";
+            if(firstNightArr[i].name === "Traveler Info" || firstNightArr[i].name === "Minion Info" || firstNightArr[i].name === "Demon Info"){
+                newRow.append($("<td>").text(outCell0)).attr("class", "nightReferenceTableName");
+                outCell1 = firstNightArr[i].name;
+                outCell2 = firstNightArr[i].reminder;
+                newRow.append($("<td>").text(outCell1)).attr("class", "nightReferenceTableName");
+                newRow.append($("<td>").text(outCell2)).attr("class", "nightReferenceTableAbility");
+            } else {
+                img1.src = firstNightArr[i].imageAddress;
+                img1.style.width = imageWidth;
+                div1.appendChild(img1);
+                newRow.append($("<td>").append(div1)).attr("class", "nightReferenceTableName");
+                outCell1 = firstNightArr[i].name;
+                outCell2 = firstNightArr[i].reminder;
+                newRow.append($("<td>").text(outCell1)).attr("class","nightReferenceTableName");
+                newRow.append($("<td>").text(outCell2)).attr("class", "nightReferenceTableAbility");
+            };
+            $(storyTellerFirstNightTable).append(newRow);
+        };
+        //****Other Night ST Sheet*****
+        const storyTellerOtherNightTable = document.querySelector("#storyTellerOtherNightSheet");
+        storyTellerOtherNightTable.innerHTML = "";
+        var headerRow = storyTellerOtherNightTable.insertRow(0);
+        var headerCell = headerRow.insertCell(0);
+        headerCell.colSpan = "4";
+        headerCell.innerHTML = "Other Nights";
+        headerCell.setAttribute("class", "nightReferenceTableHeader");
+        for(var i=0; i<otherNightArr.length; i++){       
+            var newRow = $("<tr>");
+            var outCell4 = "";
+            var div3 = document.createElement("div");
+            div3.className = "image-container";
+            var img3 = new Image();
+            var outCell5 = "";
+            var outCell6 = "";
+            var div4 = document.createElement("div");
+            div4.className = "image-container";
+            var img4 = new Image();
+            var outCell7 = "";
+            if(i<Math.ceil(otherNightArr.length/2)){
+                if(otherNightArr[i].name === "Traveler Info"){
+                    newRow.append($("<td>").text(outCell4)).attr("class", "nightReferenceTableName");
+                    outCell5 = otherNightArr[i].name;
+                    outCell6 = otherNightArr[i].reminder;
+                    newRow.append($("<td>").text(outCell5)).attr("class", "nightReferenceTableName");
+                    newRow.append($("<td>").text(outCell6)).attr("class", "nightReferenceTableAbility");
+                } else {
+                    img3.src = otherNightArr[i].imageAddress;
+                    img3.style.width = imageWidth;
+                    div3.appendChild(img3);
+                    newRow.append($("<td>").append(div3)).attr("class", "nightReferenceTableName");
+                    outCell5 = otherNightArr[i].name;
+                    outCell6 = otherNightArr[i].reminder;
+                    newRow.append($("<td>").text(outCell5)).attr("class","nightReferenceTableName");
+                    newRow.append($("<td>").text(outCell6)).attr("class", "nightReferenceTableAbility");
+                };
+            };
+            $(storyTellerOtherNightTable).append(newRow);
+        };
     };
     httpRequest.open('GET','ScriptbuilderData.json',true);
     httpRequest.send();
