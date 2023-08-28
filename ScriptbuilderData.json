@@ -173,7 +173,7 @@
     "firstNightReminder": "",
     "otherNight": 404,
     "otherNightReminder": "If the Barber dies, wake the Demon and show them the 'This character selected you' info token, then the Barber token. The Demon can either shake their head no or point to two players. Swap those character tokens. Put the Demon to sleep and wake each of those swapped players, showing them the 'You are' info token and their new character token.  Do remind them that their alignment did not change.",
-    "sheetOrder": 508,
+    "sheetOrder": 510,
     "reminders": ["Haircuts tonight"],
     "setup": false,
     "ability": "If you died today or tonight, the Demon may choose 2 players (not another Demon) to swap characters.",
@@ -208,7 +208,9 @@
     "reminders": [],
     "setup": true,
     "ability": "There are extra Outsiders in play. [+2 Outsiders]",
-    "imageAddress": "https://wiki.bloodontheclocktower.com/images/6/6d/Icon_baron.png"
+    "imageAddress": "https://wiki.bloodontheclocktower.com/images/6/6d/Icon_baron.png",
+    "jinx1": "Plague Doctor",
+    "jinx1Text": "If the Storyteller gains the Baron ability, up to two players become out-of-play Outsiders"
   },
   {
     "id": "beggar",
@@ -269,7 +271,9 @@
     "reminders": [],
     "setup": false,
     "ability": "If you are executed, all but 3 players die. 1 minute later, the player with the most players pointing at them dies.",
-    "imageAddress": "https://wiki.bloodontheclocktower.com/images/2/20/Icon_boomdandy.png"
+    "imageAddress": "https://wiki.bloodontheclocktower.com/images/2/20/Icon_boomdandy.png",
+    "jinx1": "Plague Doctor",
+    "jinx1Text": "If the Plague Doctor is executed and the Storyteller would gain the Boomdandy ability, the Boomdandy ability triggers immediately."
   },
   {
     "id": "bountyhunter",
@@ -490,7 +494,7 @@
     "firstNightReminder": "Wake the Minions.  Show them the Damsel character token. If the Huntsman chose the Damsel, show them the 'You are' info token and their new Townsfolk character token.",
     "otherNight": 502,
     "otherNightReminder": "If the Huntsman chose the Damsel, show them the 'You are' info token and their new Townsfolk character token.",
-    "sheetOrder": 503,
+    "sheetOrder": 505,
     "reminders": ["Guess used"],
     "setup": false,
     "ability": "All Minions know you are in play. If a Minion publicly guesses you (once), your team loses.",
@@ -601,7 +605,7 @@
     "firstNightReminder": "",
     "otherNight": 0,
     "otherNightReminder": "",
-    "sheetOrder": 504,
+    "sheetOrder": 506,
     "reminders": [],
     "remindersGlobal": ["Drunk"],
     "setup": true,
@@ -666,7 +670,9 @@
     "reminders": ["Twin"],
     "setup": false,
     "ability": "You & an opposing player know each other. If the good player is executed, evil wins. Good can't win if you both live.",
-    "imageAddress": "https://wiki.bloodontheclocktower.com/images/f/f4/Icon_eviltwin.png"
+    "imageAddress": "https://wiki.bloodontheclocktower.com/images/f/f4/Icon_eviltwin.png",
+    "jinx1": "Plague Doctor",
+    "jinx1Text": "The Storyteller cannot gain the Evil Twin ability if the Plague Doctor dies."
   },
   {
     "id": "exorcist",
@@ -735,7 +741,9 @@
     "reminders": ["Fear"],
     "setup": false,
     "ability": "Each night, choose a player. If you nominate & execute them, their team loses. All players know if you choose a new player.",
-    "imageAddress": "https://wiki.bloodontheclocktower.com/images/1/11/Icon_fearmonger.png"
+    "imageAddress": "https://wiki.bloodontheclocktower.com/images/1/11/Icon_fearmonger.png",
+    "jinx1": "Plague Doctor",
+    "jinx1Text": "If the Plague Doctor dies, a living Minion gains the Fearmonger ability in addition to their own ability and learns this."
   },
   {
     "id": "fibbin",
@@ -882,7 +890,9 @@
     "reminders": ["Claimed"],
     "setup": false,
     "ability": "If you publicly claim to be the Goblin when nominated & are executed that day, your team wins.",
-    "imageAddress": "https://wiki.bloodontheclocktower.com/images/e/e2/Icon_goblin.png"
+    "imageAddress": "https://wiki.bloodontheclocktower.com/images/e/e2/Icon_goblin.png",
+    "jinx1": "Plague Doctor",
+    "jinx1Text": "If the Plague Doctor dies, a living Minion gains the Goblin ability in addition to their own ability and learns this."
   },
   {
     "id": "godfather",
@@ -911,7 +921,7 @@
     "firstNightReminder": "",
     "otherNight": 0,
     "otherNightReminder": "",
-    "sheetOrder": 505,
+    "sheetOrder": 507,
     "reminders": ["Can not nominate"],
     "setup": false,
     "ability": "You may only nominate once per game. When you do, if the nominee is not the Demon, they die.",
@@ -1033,7 +1043,7 @@
     "firstNightReminder": "",
     "otherNight": 0,
     "otherNightReminder": "",
-    "sheetOrder": 503,
+    "sheetOrder": 504,
     "reminders": [],
     "setup": false,
     "ability": "Whoever wins, loses & whoever loses, wins, even if you are dead.",
@@ -1186,7 +1196,7 @@
     "firstNightReminder": "",
     "otherNight": 0,
     "otherNightReminder": "",
-    "sheetOrder": 506,
+    "sheetOrder": 508,
     "reminders": [],
     "setup": false,
     "ability": "When you learn that you died, publicly choose 1 alive player: if they are evil, your team loses.",
@@ -1327,7 +1337,7 @@
     "firstNightReminder": "Wake the Lunatic show them the 'These are your Minions' info token and point to the appropriate number of players.  These players do not need to really be Minions. Show them the 'These characters are not in play' info token, and show three good character tokens.",
     "otherNight": 216,
     "otherNightReminder": "Wake the Lunatic and let them choose the appropriate number of players as if they were the Demon.⬤",
-    "sheetOrder": 507,
+    "sheetOrder": 509,
     "reminders": ["Attack 1",
       "Attack 2",
       "Attack 3"],
@@ -1388,8 +1398,10 @@
     "imageAddress": "https://wiki.bloodontheclocktower.com/images/c/cf/Icon_marionette.png",
     "jinx1": "Poppy Grower",
     "jinx1Text": "When the Poppy Grower dies, the Demon learns the Marionette but the Marionette learns nothing.",
-    "jinx2": "Snitch",
-    "jinx2Text": "The Marionette learns 3 not-in-play characters when the Snitch dies, instead of at the start of the game."
+    "jinx2": "Plague Doctor",
+    "jinx2Text": "If the Demon has a neighbor who is alive and a Townsfolk or Outsider when the Plague Doctor dies, that player becomes an evil Marionette. If there is already an extra evil player, this does not happen.",
+    "jinx3": "Snitch",
+    "jinx3Text": "The Marionette learns 3 not-in-play characters when the Snitch dies, instead of at the start of the game."
   },
   {
     "id": "mastermind",
@@ -1523,7 +1535,7 @@
     "firstNightReminder": "",
     "otherNight": 413,
     "otherNightReminder": "If the Moonchild chose a good player, they die.",
-    "sheetOrder": 510,
+    "sheetOrder": 512,
     "reminders": ["Dead"],
     "setup": false,
     "ability": "When you learn that you died, publicly choose 1 alive player. Tonight, if it was a good player, they die.",
@@ -1538,7 +1550,7 @@
     "firstNightReminder": "",
     "otherNight": 0,
     "otherNightReminder": "",
-    "sheetOrder": 502,
+    "sheetOrder": 503,
     "reminders": [],
     "setup": false,
     "ability": "If you are 'mad' about being an Outsider, you might be executed.",
@@ -1691,6 +1703,25 @@
     "imageAddress": "https://wiki.bloodontheclocktower.com/images/d/d5/Icon_pixie.png"
   },
   {
+    "id": "plaguedoctor",
+    "name": "Plague Doctor",
+    "edition": "",
+    "team": "outsider",
+    "firstNight": 0,
+    "firstNightReminder": "",
+    "otherNight": 0,
+    "otherNightReminder": "",
+    "sheetOrder": 501,
+    "reminders": ["Storyteller Ability"],
+    "setup": false,
+    "ability": "If you die, the Storyteller gains a not-in-play Minion ability",
+    "imageAddress": "https://wiki.bloodontheclocktower.com/images/e/e2/Icon_plaguedoctor.png",
+    "jinx1": "Scarlet Woman",
+    "jinx1Text": "If the Plague Doctor dies, a living Minion gains the Scarlet Woman ability in addition to their own ability and learns this.",
+    "jinx2": "Spy",
+    "jinx2Text": "If the Plague Doctor dies, a living Minion gains the Spy ability in addition to their own ability and learns this."
+  },
+  {
     "id": "po",
     "name": "Po",
     "edition": "bmr",
@@ -1730,7 +1761,7 @@
     "firstNightReminder": "",
     "otherNight": 0,
     "otherNightReminder": "",
-    "sheetOrder": 509,
+    "sheetOrder": 511,
     "reminders": [],
     "setup": false,
     "ability": "If you were the player most responsible for your team losing, you change alignment & win, even if dead.",
@@ -1861,7 +1892,7 @@
     "firstNightReminder": "",
     "otherNight": 0,
     "otherNightReminder": "",
-    "sheetOrder": 501,
+    "sheetOrder": 502,
     "reminders": [],
     "setup": false,
     "ability": "You might register as evil & as a Minion or Demon, even if dead.",
