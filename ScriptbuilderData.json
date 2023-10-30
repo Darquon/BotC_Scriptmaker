@@ -2088,7 +2088,7 @@
     "team": "townsfolk",
     "firstNight": 319,
     "firstNightReminder": "Wake the Shugenja and point left or right, depending on which direction the closest evil player is.  If equal, either direction is allowed.",
-    "otherNight": ,
+    "otherNight": "",
     "otherNightReminder": "",
     "sheetOrder": 10,
     "reminders": [],
